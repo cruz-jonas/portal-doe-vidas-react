@@ -1,10 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import QuestionComponent from './component/QuestionComponent';
+import PieChart from './component/PieChartComponent';
 
 function App() {
+
   return (
     <div className="App">
-      <h1>Teste Bohr</h1>
+      <QuestionComponent />
+      <PieChart />
     </div>
   );
 }
