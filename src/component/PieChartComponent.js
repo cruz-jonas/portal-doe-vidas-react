@@ -1,18 +1,12 @@
 import { Chart } from 'react-google-charts';
 
-const PieChart = () => {
+const PieChart = ({data}) => {
 
-    const data = [
-        ['Gender', 'Choice'],
-        ['Male', 3],
-        ['Female', 1],
-        ['Other', 1],
-    ]
 
     const options = {
         title: 'Gender and Origem',
         pieHole: 0.4,
-        is3D: false,
+        is3D: true,
     };
 
     return (

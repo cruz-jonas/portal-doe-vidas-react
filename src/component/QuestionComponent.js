@@ -1,11 +1,12 @@
 import { useState } from 'react'
 
-const QuestionComponent = () => {
+const QuestionComponent = ({addChoice}) => {
 
     const [selected, setSelected] = useState("")
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        addChoice(selected)
     }
 
     const handleSelected = (e) => {
