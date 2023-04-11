@@ -7,6 +7,6 @@ const userAnswerSchema = new Schema({
     text: String    
 })
 
-const UserAnswer = mongoose.model("UserAnswer", answerSchema);
+const UserAnswer = mongoose.model("UserAnswer", userAnswerSchema);
 
 module.exports = UserAnswer;
