@@ -1,12 +1,12 @@
 const mongoose = require("mongoose")
 const { Schema } = mongoose
 
-const questionSchema = new Schema({
+const userAnswerSchema = new Schema({
     position: Number,
     name: String,
     text: String    
 })
 
-const Question = mongoose.model("Question", questionSchema);
+const UserAnswer = mongoose.model("UserAnswer", answerSchema);
 
-module.exports = Question;
+module.exports = UserAnswer;

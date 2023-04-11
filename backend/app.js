@@ -16,7 +16,6 @@ app.use(cors({ credentials: true, origin: "http://localhost:3000"}));
 
 require("./config/db.js");
 
-
 const router = require("./routes/Router.js");
 app.use(router);
 
