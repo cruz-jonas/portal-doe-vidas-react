@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
 
 // resolvendo cors (trocar url para url onde estará deployado)
-app.use(cors({ credentials: true, origin: "http://localhost:3000"}));
+app.use(cors({origin: "*"}));
 
 require("./config/db.js");
 

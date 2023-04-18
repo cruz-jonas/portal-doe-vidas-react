@@ -1,17 +1,45 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { questions } from '../data/questions'
 
 const QuestionComponent = ({ addChoice }) => {
 
-    const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
-    const [currentPosition, setCurreentPosition] = useState(0);
+    const url = "http://localhost:5000/api/user-answers/register"
+
+    const [currentPosition, setCurrentPosition] = useState(0);
     const [selected, setSelected] = useState("")
+    const [currentQuestion, setCurrentQuestion] = useState(questions[currentPosition]);
 
     const handleSubmit = (e) => {
+
         e.preventDefault();
+
+        const userAnswer = {
+            position: currentQuestion.position,
+            name: currentQuestion.name,
+            text: selected
+        }
+
         addChoice(selected)
-        setCurreentPosition(currentPosition + 1)
+        setCurrentPosition((prevCurrentPosition) => prevCurrentPosition + 1)
+
+        fetchData(userAnswer)
+        
+
+    }
+
+    useEffect(() => {
         setCurrentQuestion(questions[currentPosition])
+    }, [currentPosition])
+
+    async function fetchData(userAnswer) {
+
+        const res = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(userAnswer)
+        })
     }
 
     const handleSelected = (e) => {
@@ -24,54 +52,26 @@ const QuestionComponent = ({ addChoice }) => {
                 <form onSubmit={handleSubmit}>
                     <h1>Pergunta {currentPosition + 1}/{questions.length}</h1>
                     <p>{currentQuestion.questionText}</p>
-                    
-                        <label>
-                            {currentQuestion.answerOptions.map((option, index) =>
-                                <div className="radioContainer" key={index}>
+
+                    <label>
+                        {currentQuestion.answerOptions.map((option, index) =>
+                            <div className="radioContainer" key={index}>
+                                {(currentQuestion.position !== 8) &&
                                     <input type="radio"
                                         name="option"
                                         value={option.answerText}
-                                        onChange={handleSelected} />
-                                    <span>{option.answerText}</span>
-                                </div>
-                            )}
-                        </label>
-                    
-
-                    {/* <input type="radio"
-                                name="option"
-                                value="CF"
-                                onChange={handleSelected} />
-                            <span>{currentQuestion.answerOptions[0].answerText}</span>
-                        </label>
-                        <label>
-                            <input type="radio"
-                                name="option"
-                                value="CO"
-                                onChange={handleSelected} />
-                            <span>{currentQuestion.answerOptions[1].answerText}</span>
-                        </label>
-                        <label>
-                            <input type="radio"
-                                name="option"
-                                value="NE"
-                                onChange={handleSelected} />
-                            <span>{currentQuestion.answerOptions[2].answerText}</span>
-                        </label>
-                        <label>
-                            <input type="radio"
-                                name="option"
-                                value="DI"
-                                onChange={handleSelected} />
-                            <span>{currentQuestion.answerOptions[3].answerText}</span>
-                        </label>
-                        <label>
-                            <input type="radio"
-                                name="option"
-                                value="DF"
-                                onChange={handleSelected} />
-                            <span>{currentQuestion.answerOptions[4].answerText}</span> */}
-                    <button>Submeter</button>
+                                        onChange={handleSelected}
+                                    />}
+                                {(currentQuestion.position === 8) &&
+                                    <input type="text"
+                                        name="option"
+                                        value={option.answerText}
+                                        onChange={handleSelected} />}
+                                <span>{option.answerText}</span>
+                            </div>
+                        )}
+                    </label>
+                    <button disabled={!selected}>Submeter</button>
                 </form>
             </div>
         </div>

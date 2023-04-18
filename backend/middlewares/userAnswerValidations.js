@@ -8,8 +8,8 @@ const userAnswerCreateValidation = () => {
         body("name")
         .isString()
         .withMessage("É obrigatório informar o nome da pergunta.")
-        .isLength({ max: 50 })
-        .withMessage("O nome da pergunta precisa ter no máximo 50 caracteres"),
+        .isLength({ max: 100 })
+        .withMessage("O nome da pergunta precisa ter no máximo 100 caracteres"),
         body("text")
         .isString()
         .withMessage("É obrigatório conter a resposta selecionada."),
