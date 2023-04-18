@@ -3,7 +3,7 @@ import { questions } from '../data/questions'
 
 const QuestionComponent = ({ addChoice }) => {
 
-    const url = "http://localhost:5000/api/user-answers/register"
+    const url = "https://localhost:5000/api/user-answers/register"
 
     const [currentPosition, setCurrentPosition] = useState(0);
     const [selected, setSelected] = useState("")
