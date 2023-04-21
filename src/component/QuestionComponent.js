@@ -3,7 +3,7 @@ import { questions } from '../data/questions'
 
 const QuestionComponent = ({ addChoice }) => {
 
-    const url = process.env.URL.concat("/api/user-answers/register")
+    const url = "https://staging-portal-doe-vidas-react-cruz-jonas.bohr.io/api/user-answers/register"
 
     const [currentPosition, setCurrentPosition] = useState(0);
     const [selected, setSelected] = useState("")
