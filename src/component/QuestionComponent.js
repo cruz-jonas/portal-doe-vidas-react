@@ -40,6 +40,7 @@ const QuestionComponent = ({ addChoice }) => {
             },
             body: JSON.stringify(userAnswer)
         })
+        console.log(res)
     }
 
     const handleSelected = (e) => {
