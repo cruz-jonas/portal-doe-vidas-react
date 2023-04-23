@@ -43,7 +43,7 @@ const QuestionComponent = ({ addChoice }) => {
         const res = await fetch(url, {
             method: "POST",
             headers: headers,
-            mode: "cors",
+            mode: "no-cors",
             body: JSON.stringify(userAnswer)
         })
         console.log(res)
