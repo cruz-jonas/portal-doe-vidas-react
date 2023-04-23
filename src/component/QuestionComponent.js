@@ -37,7 +37,10 @@ const QuestionComponent = ({ addChoice }) => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": "*"
+                "Accept": "application/json",
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Credentials": "true",
+                "Origin": "https://new-ashley-orange-china.bohr.io"
             },
             body: JSON.stringify(userAnswer)
         })
