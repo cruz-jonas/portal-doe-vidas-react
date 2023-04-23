@@ -3,7 +3,7 @@ import { questions } from '../data/questions'
 
 const QuestionComponent = ({ addChoice }) => {
 
-    const url = "https://new-ashley-orange-china.bohr.io/api/user-answers/register"
+    const url = "https://portaldoevidas-api.onrender.com/api/user-answers/register"
 
     const [currentPosition, setCurrentPosition] = useState(0);
     const [selected, setSelected] = useState("")
