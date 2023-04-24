@@ -38,7 +38,6 @@ const QuestionComponent = ({ addChoice }) => {
             headers: {
                 "Content-Type": "application/json",
             },
-            mode: "no-cors",
             body: JSON.stringify(userAnswer)
         })
         console.log(res)
