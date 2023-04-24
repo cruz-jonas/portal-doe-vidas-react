@@ -33,16 +33,11 @@ const QuestionComponent = ({ addChoice }) => {
 
     async function fetchData(userAnswer) {
 
-        var headers = new Headers(
-            {
-                "Content-Type": "application/json",
-            }
-        );
-
-
         const res = await fetch(url, {
             method: "POST",
-            headers: headers,
+            headers: {
+                "Content-Type": "application/json",
+            },
             mode: "no-cors",
             body: JSON.stringify(userAnswer)
         })
