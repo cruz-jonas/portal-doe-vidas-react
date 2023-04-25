@@ -1,3 +1,21 @@
 .radioContainer {
     display: block;
 }
+
+.formContainer {
+    align-items: center;
+}
+
+.cardStyles {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: darkseagreen;
+    width: 51em;
+    height: 31em;
+}
+
+.sendAnswerButton {
+    width: fit-content;
+    margin-left: auto;
+}

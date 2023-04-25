@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { questions } from '../data/questions'
+import './QuestionComponent.css';
 
 const QuestionComponent = ({ addChoice }) => {
 
@@ -23,7 +24,7 @@ const QuestionComponent = ({ addChoice }) => {
         setCurrentPosition((prevCurrentPosition) => prevCurrentPosition + 1)
 
         fetchData(userAnswer)
-        
+
 
     }
 
@@ -50,10 +51,14 @@ const QuestionComponent = ({ addChoice }) => {
     return (
         <div>
             <div>
-                <form onSubmit={handleSubmit}>
+                <nav>
+                    
+                </nav>
+            </div>
+            <div className="formContainer">
+                <form className="cardStyles" onSubmit={handleSubmit}>
                     <h1>Pergunta {currentPosition + 1}/{questions.length}</h1>
                     <p>{currentQuestion.questionText}</p>
-
                     <label>
                         {currentQuestion.answerOptions.map((option, index) =>
                             <div className="radioContainer" key={index}>
@@ -72,7 +77,7 @@ const QuestionComponent = ({ addChoice }) => {
                             </div>
                         )}
                     </label>
-                    <button disabled={!selected}>Submeter</button>
+                    <button className="sendAnswerButton" disabled={!selected}>Próxima</button>
                 </form>
             </div>
         </div>
