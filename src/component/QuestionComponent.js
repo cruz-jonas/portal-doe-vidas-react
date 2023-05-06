@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { questions } from '../data/questions'
 import './QuestionComponent.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const QuestionComponent = ({ addChoice }) => {
 
@@ -41,7 +42,7 @@ const QuestionComponent = ({ addChoice }) => {
             },
             body: JSON.stringify(userAnswer)
         })
-        console.log(res)
+
     }
 
     const handleSelected = (e) => {
@@ -50,33 +51,51 @@ const QuestionComponent = ({ addChoice }) => {
 
     return (
         <div>
-            <div>
-                <nav>
-                    
-                </nav>
-            </div>
+            {/* <nav className="navbar navbar-expand-lg bg-body-tertiary nav"> */}
+            {/* <div className="div-nav"> */}
+                <div className="row">
+                    <div className="col-sm-6">
+                        <a className="navbar-brand" href="#">Portal Doe Vidas</a>
+                    </div>
+                    <div className="col-sm-3 div-sobre-portal">
+                        <a className="navbar-brand" href="#">Sobre o portal</a>
+                    </div>
+                    <div className="col-sm">
+                        <a className="navbar-brand" href="#">Quero me registrar como doador</a>
+                    </div>
+                </div>
+            {/* </div> */}
+
+            {/* </nav> */}
             <div className="formContainer">
                 <form className="cardStyles" onSubmit={handleSubmit}>
-                    <h1>Pergunta {currentPosition + 1}/{questions.length}</h1>
-                    <p>{currentQuestion.questionText}</p>
-                    <label>
-                        {currentQuestion.answerOptions.map((option, index) =>
-                            <div className="radioContainer" key={index}>
-                                {(currentQuestion.position !== 8) &&
-                                    <input type="radio"
-                                        name="option"
-                                        value={option.answerText}
-                                        onChange={handleSelected}
-                                    />}
-                                {(currentQuestion.position === 8) &&
-                                    <input type="text"
-                                        name="option"
-                                        value={option.answerText}
-                                        onChange={handleSelected} />}
-                                <span>{option.answerText}</span>
-                            </div>
-                        )}
-                    </label>
+                    <div>
+                        <h2>{currentQuestion.name}</h2>
+                    </div>
+                    <div>
+                        <p>{currentQuestion.questionText}</p>
+                    </div>
+                    <div>
+                        <label>
+                            {currentQuestion.answerOptions.map((option, index) =>
+                                <div className="radioContainer" key={index}>
+                                    {(currentQuestion.position !== 8) &&
+                                        <input type="radio"
+                                            name="option"
+                                            value={option.answerText}
+                                            onChange={handleSelected}
+
+                                        />}
+                                    {(currentQuestion.position === 8) &&
+                                        <input type="text"
+                                            name="option"
+                                            value={option.answerText}
+                                            onChange={handleSelected} />}
+                                    <label>{option.answerText}</label>
+                                </div>
+                            )}
+                        </label>
+                    </div>
                     <button className="sendAnswerButton" disabled={!selected}>Próxima</button>
                 </form>
             </div>

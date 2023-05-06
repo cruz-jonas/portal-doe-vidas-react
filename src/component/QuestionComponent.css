@@ -19,3 +19,16 @@
     width: fit-content;
     margin-left: auto;
 }
+
+.nav {
+    margin-top: -40px;
+    height: 155px;
+}
+
+.div-nav {
+    display: block;
+}
+
+.div-sobre-portal {
+    padding-left: 170px;
+}
