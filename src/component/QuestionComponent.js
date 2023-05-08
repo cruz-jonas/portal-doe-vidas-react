@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { questions } from '../data/questions'
-import './QuestionComponent.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './QuestionComponent.css'
+import doacaoIcone from '../assets/doacao-de-orgaos.png'
+import { Container, Row, Col, Card, Button, Form, Navbar, Image } from 'react-bootstrap';
 
 const QuestionComponent = ({ addChoice }) => {
 
@@ -50,56 +51,60 @@ const QuestionComponent = ({ addChoice }) => {
     }
 
     return (
-        <div>
-            {/* <nav className="navbar navbar-expand-lg bg-body-tertiary nav"> */}
-            {/* <div className="div-nav"> */}
-                <div className="row">
-                    <div className="col-sm-6">
-                        <a className="navbar-brand" href="#">Portal Doe Vidas</a>
-                    </div>
-                    <div className="col-sm-3 div-sobre-portal">
-                        <a className="navbar-brand" href="#">Sobre o portal</a>
-                    </div>
-                    <div className="col-sm">
-                        <a className="navbar-brand" href="#">Quero me registrar como doador</a>
-                    </div>
-                </div>
-            {/* </div> */}
+        <Container>
+            <Navbar className="navbarStyles">
+                <Row>
+                    <Col>
+                        <Image
+                            className="navbar-brand iconStyles"
+                            src={doacaoIcone} />
+                    </Col>
+                    <Col className="aboutSite">
+                        <Navbar.Brand className="navbar-brand" href="#">Sobre este site</Navbar.Brand>
+                    </Col>
+                </Row>
+            </Navbar>
 
-            {/* </nav> */}
-            <div className="formContainer">
-                <form className="cardStyles" onSubmit={handleSubmit}>
-                    <div>
-                        <h2>{currentQuestion.name}</h2>
-                    </div>
-                    <div>
-                        <p>{currentQuestion.questionText}</p>
-                    </div>
-                    <div>
-                        <label>
-                            {currentQuestion.answerOptions.map((option, index) =>
-                                <div className="radioContainer" key={index}>
-                                    {(currentQuestion.position !== 8) &&
-                                        <input type="radio"
+            <Row className="justify-content-center align-items-center">
+                <Col>
+                    <Card>
+                        <Card.Body>
+                            <Form className="cardStyles" onSubmit={handleSubmit}>
+                                <Card.Title style={{ fontSize: 'inherit' }}>{currentQuestion.name}</Card.Title>
+                                <Card.Text style={{ fontSize: 'small' }}>{currentQuestion.questionText}</Card.Text>
+                                {currentQuestion.answerOptions.map((option, index) =>
+                                    <div className="radioContainer" key={index}>
+                                        {currentQuestion.position !== 8 &&
+                                            <Col xs={11} className="mx-auto">
+                                                <Form.Check
+                                                    type="radio"
+                                                    name="option"
+                                                    label={option.answerText}
+                                                    value={option.answerText}
+                                                    onChange={handleSelected}
+                                                />
+                                            </Col>
+
+                                        }
+                                    </div>
+                                )}
+                                {currentQuestion.position === 8 &&
+                                    <Col xs={10} className="mx-auto">
+                                        <Form.Control
+                                            className="inputTextStyles"
+                                            as="textarea"
                                             name="option"
-                                            value={option.answerText}
                                             onChange={handleSelected}
-
-                                        />}
-                                    {(currentQuestion.position === 8) &&
-                                        <input type="text"
-                                            name="option"
-                                            value={option.answerText}
-                                            onChange={handleSelected} />}
-                                    <label>{option.answerText}</label>
-                                </div>
-                            )}
-                        </label>
-                    </div>
-                    <button className="sendAnswerButton" disabled={!selected}>Próxima</button>
-                </form>
-            </div>
-        </div>
+                                        />
+                                    </Col>  
+                                }
+                                <Button type="submit" className="sendAnswerButton" disabled={!selected}>Próxima</Button>
+                            </Form>
+                        </Card.Body>
+                    </Card>
+                </Col>
+            </Row>
+        </Container >
     )
 }
 

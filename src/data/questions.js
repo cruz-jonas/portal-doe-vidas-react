@@ -85,7 +85,7 @@ export const questions = [
     },
     {
         questionText: "Caso queira, será de grande utilidade suas impressões sobre este portal.",
-        answerOptions: [],
+        answerOptions: ["."],
         name: "Impressões sobre o portal",
         position: 8
     },

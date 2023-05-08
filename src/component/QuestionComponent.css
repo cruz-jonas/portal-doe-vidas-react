@@ -1,5 +1,6 @@
 .radioContainer {
     display: block;
+    font-size: small;
 }
 
 .formContainer {
@@ -11,12 +12,14 @@
     flex-direction: column;
     justify-content: space-evenly;
     background-color: darkseagreen;
-    width: 51em;
-    height: 31em;
+    padding: inherit;
+}
+
+.navbarStyles {
+    background-color: linen;
 }
 
 .sendAnswerButton {
-    width: fit-content;
     margin-left: auto;
 }
 
@@ -29,6 +32,17 @@
     display: block;
 }
 
-.div-sobre-portal {
-    padding-left: 170px;
+.aboutSite {
+    padding-top: 63px
+}
+
+.iconStyles {
+    padding-left: 29px;
+    margin-top: -33px;
+    height: 139px;
+}
+
+.inputTextStyles {
+    text-align: left;
+    height: 190px;
 }
