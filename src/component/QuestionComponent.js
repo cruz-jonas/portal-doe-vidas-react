@@ -70,7 +70,7 @@ const QuestionComponent = ({ addChoice }) => {
                     <Card>
                         <Card.Body>
                             <Form className="cardStyles" onSubmit={handleSubmit}>
-                                <Card.Title style={{ fontSize: 'inherit' }}>{currentQuestion.name}</Card.Title>
+                                {/* <Card.Title style={{ fontSize: 'inherit' }}>{currentQuestion.name}</Card.Title> */}
                                 <Card.Text style={{ fontSize: 'small' }}>{currentQuestion.questionText}</Card.Text>
                                 {currentQuestion.answerOptions.map((option, index) =>
                                     <div className="radioContainer" key={index}>

@@ -1,6 +1,6 @@
 export const questions = [
     {
-        questionText: "Considero o conhecimento dos processos que envolvem a efetivação da doação de órgão importantes e de interesse geral da população.",
+        questionText: "Considero o conhecimento dos processos que envolvem a efetivação da doação de órgão importante e de interesse geral da população. Devendo as informações serem difundidas de forma mais clara e intuitiva para que o indivíduo possa ter uma opinião melhor formada.",
         answerOptions: [
             { answerText: "concordo fortemente" },
             { answerText: "concordo" },
@@ -8,11 +8,11 @@ export const questions = [
             { answerText: "discordo" },
             { answerText: "discordo fortemente" },
         ],
-        name: "Gostaria de saber mais sobre o assunto",
+        name: "Sobre a importância do assunto",
         position: 1
     },
     {
-        questionText: "Gostaria de saber quais são os tipos de morte que podem estar aptas ao processo de doação.",
+        questionText: "É de meu conhecimento que para uma doação seja apta ao processo, deve ter sido decretada morte encefálica do paciente, constatada e redigida por dois médicos mediante a utilização de critérios técnicos e clínicos definidos pelo CFM(Conselho Federal de Medicina). E que se óbito for oriundo de parada cardiorrespiratória apenas os tecidos podem ser doados.",
         answerOptions: [
             { answerText: "concordo fortemente" },
             { answerText: "concordo" },
@@ -20,11 +20,11 @@ export const questions = [
             { answerText: "discordo" },
             { answerText: "discordo fortemente" },
         ],
-        name: "Gostaria de saber mais sobre os tipos de mortes aptas",
+        name: "Sobre o tipo de morte",
         position: 2
     },
     {
-        questionText: "Considero suficiente a legislação atual, onde diz que…blablablabla……",
+        questionText: "Considero suficiente a legislação atual, onde diz que “A retirada de tecidos, órgãos e partes do corpo de pessoas falecidas para transplantes ou outra finalidade terapêutica, dependerá da autorização do cônjuge ou parente, maior de idade, obedecida a linha sucessória, reta ou colateral, até o segundo grau inclusive, firmada em documento subscrito por duas testemunhas presentes à verificação da morte.”",
         answerOptions: [
             { answerText: "concordo fortemente" },
             { answerText: "concordo" },
@@ -36,7 +36,7 @@ export const questions = [
         position: 3
     },
     {
-        questionText: "Em caso de um parente próximo a mim falecer e cumprir os requisitos para ser doador de órgãos, e eu for o responsável por autorizar, eu não autorizo sem saber a vontade do ente falecido.",
+        questionText: "Considere o seguinte cenário hipotético: um familiar próximo a mim falece e sua morte cumpre os requisitos para que a doação de órgãos ocorra, e eu sou o responsável por autorizar ou não mas não sei qual era a vontade do familiar. Eu não autorizo pois não sei se era vontade dele(a).",
         answerOptions: [
             { answerText: "concordo fortemente" },
             { answerText: "concordo" },
@@ -44,11 +44,11 @@ export const questions = [
             { answerText: "discordo" },
             { answerText: "discordo fortemente" },
         ],
-        name: "Não autorizariam mesmo o ente falecido estando apto ao procedimento e sem saber da vontade do mesmo",
+        name: "Não autorizariam",
         position: 4
     },
     {
-        questionText: "Considerando o cenário da pergunta anterior, acrescenta-se que eu sei da vontade do ente falecido em ser doador, eu autorizaria.",
+        questionText: "Considerando o cenário da pergunta anterior, acrescenta-se que eu sei da vontade do familiar falecido em ser doador, eu autorizo.",
         answerOptions: [
             { answerText: "concordo fortemente" },
             { answerText: "concordo" },
@@ -56,11 +56,11 @@ export const questions = [
             { answerText: "discordo" },
             { answerText: "discordo fortemente" },
         ],
-        name: "Autorizariam caso o ente falecido estivese apto ao procedimento e sabendo da vontade do mesmo em ser doador",
+        name: "Autorizariam",
         position: 5
     },
     {
-        questionText: "Gostaria que no Brasil fosse aprovado o projeto de lei (número do projeto), que prevê o consentimento presumido, onde eu sou doador até que eu manifeste a não vontade em vida.",
+        questionText: "Gostaria que no Brasil fosse aprovada uma lei semelhante à praticada na Espanha (Lei 30/1979, de 27 de outubro), que prevê o consentimento presumido, onde todo cidadão espanhol é doador a menos que manifeste explicitamente em vida a recusa. Neste modelo a família é consultada mas sua opinião não é mandatória e não pode impedir a efetivação da doação. A consulta ocorre para que os profissionais de saúde capacitados possam efetuar o acolhimento psicológico e a coleta de mais informações referente ao paciente.",
         answerOptions: [
             { answerText: "concordo fortemente" },
             { answerText: "concordo" },
