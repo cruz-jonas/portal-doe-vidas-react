@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import { questions } from '../data/questions'
 import './QuestionComponent.css'
-import doacaoIcone from '../assets/doacao-de-orgaos.png'
-import { Container, Row, Col, Card, Button, Form, Navbar, Image } from 'react-bootstrap';
+import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap';
 
 const QuestionComponent = ({ addChoice }) => {
 
@@ -52,25 +51,11 @@ const QuestionComponent = ({ addChoice }) => {
 
     return (
         <Container>
-            <Navbar className="navbarStyles">
-                <Row>
-                    <Col>
-                        <Image
-                            className="navbar-brand iconStyles"
-                            src={doacaoIcone} />
-                    </Col>
-                    <Col className="aboutSite">
-                        <Navbar.Brand className="navbar-brand" href="#">Sobre este site</Navbar.Brand>
-                    </Col>
-                </Row>
-            </Navbar>
-
             <Row className="justify-content-center align-items-center">
                 <Col>
                     <Card>
                         <Card.Body>
                             <Form className="cardStyles" onSubmit={handleSubmit}>
-                                {/* <Card.Title style={{ fontSize: 'inherit' }}>{currentQuestion.name}</Card.Title> */}
                                 <Card.Text style={{ fontSize: 'small' }}>{currentQuestion.questionText}</Card.Text>
                                 {currentQuestion.answerOptions.map((option, index) =>
                                     <div className="radioContainer" key={index}>

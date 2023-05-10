@@ -2,3 +2,18 @@ div {
   display: block;
   padding-top: 15px;
 }
+
+.navbarStyles {
+  background-color: linen;
+  margin-top: -14px;
+}
+
+.aboutSite {
+  padding-top: 63px
+}
+
+.iconStyles {
+  padding-left: 29px;
+  margin-top: -33px;
+  height: 139px;
+}

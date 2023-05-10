@@ -15,31 +15,8 @@
     padding: inherit;
 }
 
-.navbarStyles {
-    background-color: linen;
-}
-
 .sendAnswerButton {
     margin-left: auto;
-}
-
-.nav {
-    margin-top: -40px;
-    height: 155px;
-}
-
-.div-nav {
-    display: block;
-}
-
-.aboutSite {
-    padding-top: 63px
-}
-
-.iconStyles {
-    padding-left: 29px;
-    margin-top: -33px;
-    height: 139px;
 }
 
 .inputTextStyles {
