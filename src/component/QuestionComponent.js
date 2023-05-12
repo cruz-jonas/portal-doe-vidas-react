@@ -10,6 +10,7 @@ const QuestionComponent = ({ addChoice }) => {
     const [currentPosition, setCurrentPosition] = useState(0);
     const [selected, setSelected] = useState("")
     const [currentQuestion, setCurrentQuestion] = useState(questions[currentPosition]);
+    const [selectedOption, setSelectedOption] = useState(null);
 
     const handleSubmit = (e) => {
 
@@ -23,6 +24,8 @@ const QuestionComponent = ({ addChoice }) => {
 
         addChoice(selected)
         setCurrentPosition((prevCurrentPosition) => prevCurrentPosition + 1)
+        setSelectedOption(null)
+        setSelected("")
 
         fetchData(userAnswer)
 
@@ -45,8 +48,9 @@ const QuestionComponent = ({ addChoice }) => {
 
     }
 
-    const handleSelected = (e) => {
-        setSelected(e.target.value)
+    const handleSelected = (option) => {
+        setSelected(option)
+        setSelectedOption(option)
     }
 
     return (
@@ -56,20 +60,23 @@ const QuestionComponent = ({ addChoice }) => {
                     <Card>
                         <Card.Body>
                             <Form className="cardStyles" onSubmit={handleSubmit}>
-                                <Card.Text style={{ fontSize: 'small' }}>{currentQuestion.questionText}</Card.Text>
+                                <div className="cardTextDiv">
+                                    <Card.Text className="carTextSize">{currentQuestion.questionText}</Card.Text>
+                                </div>
                                 {currentQuestion.answerOptions.map((option, index) =>
                                     <div className="radioContainer" key={index}>
                                         {currentQuestion.position !== 8 &&
                                             <Col xs={11} className="mx-auto">
                                                 <Form.Check
+                                                    className="customRadio"
                                                     type="radio"
                                                     name="option"
                                                     label={option.answerText}
                                                     value={option.answerText}
-                                                    onChange={handleSelected}
+                                                    checked={selectedOption === option.answerText}
+                                                    onChange={() => handleSelected(option.answerText)}
                                                 />
                                             </Col>
-
                                         }
                                     </div>
                                 )}
@@ -81,7 +88,7 @@ const QuestionComponent = ({ addChoice }) => {
                                             name="option"
                                             onChange={handleSelected}
                                         />
-                                    </Col>  
+                                    </Col>
                                 }
                                 <Button type="submit" className="sendAnswerButton" disabled={!selected}>Próxima</Button>
                             </Form>
