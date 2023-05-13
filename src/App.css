@@ -8,12 +8,32 @@ div {
   margin-top: -14px;
 }
 
-.aboutSite {
-  padding-top: 63px
+.navFontSize {
+  font-size: 18px;
 }
 
 .iconStyles {
   padding-left: 29px;
   margin-top: -33px;
   height: 139px;
+}
+
+.aboutSite-information {
+  margin-top: -15px;
+}
+
+@media only screen and (max-width: 768px) {
+  /* Estilos para dispositivos com largura máxima de 768px */
+  .aboutSite {
+    margin-left: auto;
+    color: black;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  /* Estilos para dispositivos com largura mínima de 769px */
+  .aboutSite {
+    padding-top: 63px;
+    color: black;
+  }
 }

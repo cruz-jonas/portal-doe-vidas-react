@@ -19,7 +19,7 @@ const QuestionComponent = ({ addChoice }) => {
         const userAnswer = {
             position: currentQuestion.position,
             name: currentQuestion.name,
-            text: selected
+            text: e.target.option.value
         }
 
         addChoice(selected)
@@ -28,6 +28,10 @@ const QuestionComponent = ({ addChoice }) => {
         setSelected("")
 
         fetchData(userAnswer)
+
+        if(currentQuestion.position === 9 && selected === "sim") {
+            window.location.href = 'https://doarelegal.tjrs.jus.br/'
+        }
 
 
     }
@@ -90,7 +94,12 @@ const QuestionComponent = ({ addChoice }) => {
                                         />
                                     </Col>
                                 }
-                                <Button type="submit" className="sendAnswerButton" disabled={!selected}>Próxima</Button>
+                                {currentQuestion.position !== 10 &&
+                                    <Button
+                                        type="submit"
+                                        className="sendAnswerButton"
+                                        disabled={!selected}>Próxima</Button>
+                                }
                             </Form>
                         </Card.Body>
                     </Card>

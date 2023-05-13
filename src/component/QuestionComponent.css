@@ -42,7 +42,7 @@
 @media only screen and (min-width: 769px) {
     /* Estilos para dispositivos com largura mínima de 769px */
     .carTextSize {
-      font-size: large;
+      font-size: larger;
     }
 
     .carTextSize {
