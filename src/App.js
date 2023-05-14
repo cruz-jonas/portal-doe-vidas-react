@@ -1,34 +1,65 @@
 import './App.css';
-// import { useState } from 'react'
 import QuestionComponent from './component/QuestionComponent';
-// import PieChart from './component/PieChartComponent'; 
-// import { questions } from './data/questions'
+import doacaoIcone from './assets/health.png'
+import { Container, Row, Col, Navbar, Image, NavDropdown } from 'react-bootstrap';
+import AboutModalComponent from './component/AboutModalComponent';
+import { useState } from 'react'
+import BrainDeathModalComponent from './component/BrainDeathModalComponent';
+import OrganDonationModalComponent from './component/OrganDonationModalComponent';
+import DonationIsAmazingModalComponent from './component/DonationIsAmazingModalComponent';
 
 function App() {
 
+  const [aboutModalShow, setAboutModalShow] = useState(false);
+  const [brainDeathModalShow, setBrainDeathModalShow] = useState(false);
+  const [organDonationModalShow, setOrganDonationModalShow] = useState(false);
+  const [donationIsAmazingModalShow, setDonationIsAmazingModalShow] = useState(false);
 
-    // const data = graficos.grafico1
-
-    // const [choices, setChoices] = useState(data)
-
-    const addChoice = (e) => {
-      // choices.map((choice) => {
-      //   if (choice[0] === e) {
-      //     choice[1] = ++choice[1]
-      //   } else {
-      //     setChoices((actualChoices) => [...actualChoices, [e, 1]])
-      //   }
-      // })
-      // data = choices;
-      console.log(e)
-    }
-
-    return (
-      <div className="App">
-        <QuestionComponent addChoice={addChoice} />
-        {/* <PieChart data={data} /> */}
-      </div>
-    );
+  const addChoice = (e) => {
+    console.log(e)
   }
+
+  return (
+    <Container>
+      <Navbar className="navbarStyles">
+        <Row>
+          <Col className="col-11 col-md-auto">
+            <Image
+              className="navbar-brand iconStyles"
+              src={doacaoIcone} />
+          </Col>
+          <Col className="col-11 col-md-auto aboutSite">
+            <Navbar.Brand className="navbar-brand navFontSize" onClick={() => setAboutModalShow(true)}>Sobre este portal</Navbar.Brand>
+          </Col>
+          <Col className="col-11 col-md-auto aboutSite aboutSite-information">
+            <NavDropdown
+              className="navFontSize"
+              title="Mais informações"
+              menuVariant="dark"
+            >
+              <NavDropdown.Item onClick={() => setBrainDeathModalShow(true)}>Morte Encefálica</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => setOrganDonationModalShow(true)}>Doação de Órgãos e Tecidos</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => setDonationIsAmazingModalShow(true)}>Doar é Legal</NavDropdown.Item>
+            </NavDropdown>
+          </Col>
+        </Row>
+      </Navbar>
+      <QuestionComponent addChoice={addChoice} />
+      <AboutModalComponent
+        show={aboutModalShow}
+        onHide={() => setAboutModalShow(false)} />
+      <BrainDeathModalComponent
+        show={brainDeathModalShow}
+        onHide={() => setBrainDeathModalShow(false)} />
+      <OrganDonationModalComponent
+        show={organDonationModalShow}
+        onHide={() => setOrganDonationModalShow(false)} />
+      <DonationIsAmazingModalComponent
+        show={donationIsAmazingModalShow}
+        onHide={() => setDonationIsAmazingModalShow(false)} />
+    </Container>
+
+  );
+}
 
 export default App;

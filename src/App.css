@@ -1,6 +1,60 @@
 div {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding-top: 20px;
+  display: block;
+  padding-top: 15px;
+}
+
+.navbarStyles {
+  background-color: #f8f9fa;
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  margin-top: -14px;
+}
+
+.navbar-brand {
+  color: #333;
+  font-size: 20px;
+}
+
+.navbar-brand:hover {
+  color: #007bff;
+}
+
+
+.navFontSize {
+  font-size: 16px;
+}
+
+.iconStyles {
+  padding-left: 29px;
+  margin-top: -33px;
+  height: 115px;
+}
+
+.aboutSite-information:hover {
+  color:#007bff;
+}
+
+
+@media only screen and (max-width: 768px) {
+  /* Estilos para dispositivos com largura máxima de 768px */
+  .aboutSite {
+    margin-left: auto;
+    color: #333;
+  }
+
+  .aboutSite-information {
+    padding-top: 0px;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  /* Estilos para dispositivos com largura mínima de 769px */
+  .aboutSite {
+    padding-top: 63px;
+    color: #333;
+  }
+
+  .aboutSite-information {
+    margin-top: -15px;
+  }
 }

@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { questions } from '../data/questions'
+import './QuestionComponent.css'
+import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap';
 
 const QuestionComponent = ({ addChoice }) => {
 
@@ -8,6 +10,7 @@ const QuestionComponent = ({ addChoice }) => {
     const [currentPosition, setCurrentPosition] = useState(0);
     const [selected, setSelected] = useState("")
     const [currentQuestion, setCurrentQuestion] = useState(questions[currentPosition]);
+    const [selectedOption, setSelectedOption] = useState(null);
 
     const handleSubmit = (e) => {
 
@@ -16,14 +19,20 @@ const QuestionComponent = ({ addChoice }) => {
         const userAnswer = {
             position: currentQuestion.position,
             name: currentQuestion.name,
-            text: selected
+            text: e.target.option.value
         }
 
         addChoice(selected)
         setCurrentPosition((prevCurrentPosition) => prevCurrentPosition + 1)
+        setSelectedOption(null)
+        setSelected("")
 
         fetchData(userAnswer)
-        
+
+        if(currentQuestion.position === 9 && selected === "sim") {
+            window.location.href = 'https://doarelegal.tjrs.jus.br/'
+        }
+
 
     }
 
@@ -40,42 +49,63 @@ const QuestionComponent = ({ addChoice }) => {
             },
             body: JSON.stringify(userAnswer)
         })
-        console.log(res)
+
     }
 
-    const handleSelected = (e) => {
-        setSelected(e.target.value)
+    const handleSelected = (option) => {
+        setSelected(option)
+        setSelectedOption(option)
     }
 
     return (
-        <div>
-            <div>
-                <form onSubmit={handleSubmit}>
-                    <h1>Pergunta {currentPosition + 1}/{questions.length}</h1>
-                    <p>{currentQuestion.questionText}</p>
-
-                    <label>
-                        {currentQuestion.answerOptions.map((option, index) =>
-                            <div className="radioContainer" key={index}>
-                                {(currentQuestion.position !== 8) &&
-                                    <input type="radio"
-                                        name="option"
-                                        value={option.answerText}
-                                        onChange={handleSelected}
-                                    />}
-                                {(currentQuestion.position === 8) &&
-                                    <input type="text"
-                                        name="option"
-                                        value={option.answerText}
-                                        onChange={handleSelected} />}
-                                <span>{option.answerText}</span>
-                            </div>
-                        )}
-                    </label>
-                    <button disabled={!selected}>Submeter</button>
-                </form>
-            </div>
-        </div>
+        <Container>
+            <Row className="justify-content-center align-items-center">
+                <Col>
+                    <Card className="cardBoxShadow">
+                        <Card.Body>
+                            <Form className="cardStyles" onSubmit={handleSubmit}>
+                                <div className="cardTextDiv">
+                                    <Card.Text className="carTextSize">{currentQuestion.questionText}</Card.Text>
+                                </div>
+                                {currentQuestion.answerOptions.map((option, index) =>
+                                    <div className="radioContainer" key={index}>
+                                        {currentQuestion.position !== 8 &&
+                                            <Col xs={11} className="mx-auto">
+                                                <Form.Check
+                                                    className="customRadio"
+                                                    type="radio"
+                                                    name="option"
+                                                    label={option.answerText}
+                                                    value={option.answerText}
+                                                    checked={selectedOption === option.answerText}
+                                                    onChange={() => handleSelected(option.answerText)}
+                                                />
+                                            </Col>
+                                        }
+                                    </div>
+                                )}
+                                {currentQuestion.position === 8 &&
+                                    <Col xs={10} className="mx-auto">
+                                        <Form.Control
+                                            className="inputTextStyles"
+                                            as="textarea"
+                                            name="option"
+                                            onChange={handleSelected}
+                                        />
+                                    </Col>
+                                }
+                                {currentQuestion.position !== 10 &&
+                                    <Button
+                                        type="submit"
+                                        className="sendAnswerButton"
+                                        disabled={!selected}>Próxima</Button>
+                                }
+                            </Form>
+                        </Card.Body>
+                    </Card>
+                </Col>
+            </Row>
+        </Container >
     )
 }
 
