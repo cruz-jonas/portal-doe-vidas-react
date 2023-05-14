@@ -98,5 +98,11 @@ export const questions = [
         ],
         name: "Registrar vontade",
         position: 9
+    },
+    {
+        questionText: "Obrigado",
+        answerOptions: [],
+        name: "Final",
+        position: 10
     }
 ];

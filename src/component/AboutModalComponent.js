@@ -20,7 +20,7 @@ const AboutModalComponent = (props) => {
                 </p>
             </Modal.Body>
             <Modal.Footer>
-                <Button onClick={props.onHide}>Close</Button>
+                <Button onClick={props.onHide}>Fechar</Button>
             </Modal.Footer>
         </Modal>
     )

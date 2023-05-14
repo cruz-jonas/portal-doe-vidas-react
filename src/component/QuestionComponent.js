@@ -61,7 +61,7 @@ const QuestionComponent = ({ addChoice }) => {
         <Container>
             <Row className="justify-content-center align-items-center">
                 <Col>
-                    <Card>
+                    <Card className="cardBoxShadow">
                         <Card.Body>
                             <Form className="cardStyles" onSubmit={handleSubmit}>
                                 <div className="cardTextDiv">
