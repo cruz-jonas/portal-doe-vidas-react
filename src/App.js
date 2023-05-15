@@ -29,7 +29,7 @@ function App() {
               src={doacaoIcone} />
           </Col>
           <Col className="col-11 col-md-auto aboutSite">
-            <Navbar.Brand className="navbar-brand navFontSize" onClick={() => setAboutModalShow(true)}>Sobre este portal</Navbar.Brand>
+            <Navbar.Brand className="navbar-brand navFontSize" onClick={() => setAboutModalShow(true)}>Sobre esta aplicação</Navbar.Brand>
           </Col>
           <Col className="col-11 col-md-auto aboutSite aboutSite-information">
             <NavDropdown

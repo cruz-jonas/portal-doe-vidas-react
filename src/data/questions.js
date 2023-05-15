@@ -1,6 +1,6 @@
 export const questions = [
     {
-        questionText: "Considero o conhecimento dos processos que envolvem a efetivação da doação de órgão importante e de interesse geral da população. Devendo as informações serem difundidas de forma mais clara e intuitiva para que o indivíduo possa ter uma opinião melhor formada.",
+        questionText: "Considero o conhecimento dos processos que envolvem a efetivação da doação de órgão importante e de interesse geral da população. Devendo as informações serem divulgadas de forma mais clara e intuitiva para que as pessoas possam ter uma opinião melhor formada.",
         answerOptions: [
             { answerText: "concordo totalmente" },
             { answerText: "concordo parcialmente" },
@@ -12,7 +12,7 @@ export const questions = [
         position: 1
     },
     {
-        questionText: "É de meu conhecimento que para uma doação seja apta ao processo, deve ter sido decretada morte encefálica do paciente, constatada e redigida por dois médicos mediante a utilização de critérios técnicos e clínicos definidos pelo CFM(Conselho Federal de Medicina). E que se óbito for oriundo de parada cardiorrespiratória apenas os tecidos podem ser doados.",
+        questionText: "É de meu conhecimento que para uma doação seja apta ao processo, deve ter sido decretada morte encefálica do paciente, constatada e redigida por dois médicos mediante a utilização de critérios técnicos e clínicos definidos pelo CFM(Conselho Federal de Medicina). E que se o óbito for oriundo de parada cardiorrespiratória apenas os tecidos podem ser doados.",
         answerOptions: [
             { answerText: "concordo totalmente" },
             { answerText: "concordo parcialmente" },
@@ -72,7 +72,7 @@ export const questions = [
         position: 6
     },
     {
-        questionText: "Este portal me ajudou a ter mais conhecimento acerca dos processos que envolvem a doação de órgãos.",
+        questionText: "Esta aplicação me ajudou a ter mais conhecimento acerca dos processos que envolvem a doação de órgãos.",
         answerOptions: [
             { answerText: "concordo totalmente" },
             { answerText: "concordo parcialmente" },
@@ -80,13 +80,13 @@ export const questions = [
             { answerText: "discordo parcialmente" },
             { answerText: "discordo totalmente" },
         ],
-        name: "Sobre o portal ter ajudado quanto ao conhecimento sobre o assunto",
+        name: "Sobre a aplicação ter ajudado quanto ao conhecimento sobre o assunto",
         position: 7
     },
     {
-        questionText: "Será de grande utilidade sua opinião sobre este portal.",
+        questionText: "Será de grande utilidade sua opinião sobre esta aplicação.",
         answerOptions: ["."],
-        name: "Opinião sobre o portal",
+        name: "Opinião sobre a aplicação",
         position: 8
     },
     {

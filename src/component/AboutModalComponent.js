@@ -9,8 +9,9 @@ const AboutModalComponent = (props) => {
             centered>
             <Modal.Body>
                 <p>
-                Este portal foi pensado, planejado e desenvolvido, do início ao fim, 
-                para contemplar o trabalho de conclusão de curso de Sistemas de Informação. 
+                Esta aplicação foi pensada, planejada e desenvolvida, do início ao fim, 
+                para contemplar o trabalho de conclusão de curso de Sistemas de Informação da 
+                Universidade do Vale do Rio dos Sinos. 
                 Em seu desenvolvimento foram utilizadas algumas tecnologias e ferramentas, 
                 tais como: React.js, Bootstrap, Node.js, Express e MongoDB. 
                 Baseado nos modelos TAM(Technology Acceptance Model) e SUS(System Usability Scale)
