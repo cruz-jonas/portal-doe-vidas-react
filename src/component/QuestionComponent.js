@@ -3,7 +3,7 @@ import { questions } from '../data/questions'
 import './QuestionComponent.css'
 import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap';
 
-const QuestionComponent = ({ addChoice }) => {
+const QuestionComponent = () => {
 
     const url = "https://portaldoevidas-api.onrender.com/api/user-answers/register"
 
@@ -22,7 +22,6 @@ const QuestionComponent = ({ addChoice }) => {
             text: e.target.option.value
         }
 
-        addChoice(selected)
         setCurrentPosition((prevCurrentPosition) => prevCurrentPosition + 1)
         setSelectedOption(null)
         setSelected("")
