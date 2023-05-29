@@ -15,10 +15,6 @@ function App() {
   const [organDonationModalShow, setOrganDonationModalShow] = useState(false);
   const [donationIsAmazingModalShow, setDonationIsAmazingModalShow] = useState(false);
 
-  const addChoice = (e) => {
-    console.log(e)
-  }
-
   return (
     <Container>
       <Navbar className="navbarStyles">
