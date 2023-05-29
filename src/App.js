@@ -40,7 +40,7 @@ function App() {
           </Col>
         </Row>
       </Navbar>
-      <QuestionComponent addChoice={addChoice} />
+      <QuestionComponent />
       <AboutModalComponent
         show={aboutModalShow}
         onHide={() => setAboutModalShow(false)} />
